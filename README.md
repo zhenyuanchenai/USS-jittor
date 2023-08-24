@@ -59,7 +59,7 @@ CUDA_VISIBLE_DEVICES='0' python test.py
 因为sam模型需要占用很大显存，可能会出现显存不足占用内容的情况（此时可能会调用服务器内存，是正常现象不用担心），并且可能出现测试程序终止的情况，或者运行过程中卡住不动的情况（很久没有下一张图片的推理时，请停止程序重新运行，会接在上一次生成后继续生成），因此请多次运行test.py直至测试结束,两个代码的运行结果可以共享，在保存数据集路径相同的情况下。
 
 
-## 训练代码
+## | 训练代码
 训练代码共有四份，依次运行bash train_1.sh、bash train_2.sh、bash train_3.sh、bash train_4.sh
 
 注：为了减轻训练时间过长带来的影响，提供中间过程的模型训练权重（不需要执行bash train_1.sh和bash train_2.sh）。
@@ -73,4 +73,4 @@ train_4.sh中./weights/pass50_resnet50/checkpoint.pth.tar可替换为./weights/t
 train_4.sh运行完毕后将生成B榜提交结果，保存在./weights/pass50_sam_upper50/pixel_finetuning/testB中。
 ```
 
-## 致谢
+## | 致谢
