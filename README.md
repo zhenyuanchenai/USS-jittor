@@ -18,10 +18,14 @@
 1.通过conda安装环境
 conda env create -f requirement.yaml 
 
-2.直接复制已有的conda环境包到自己的conda目录。
+2.直接复制已有的conda环境包到自己的conda目录
+
 cd /USS-jittor/weights
+
 unzip jittor.zip 
+
 mv /USS-jittor/weights/jittor conda目录/evns/
+
 修改自己电脑的conda环境变量
 
 注: 环境晚装说明
