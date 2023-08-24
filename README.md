@@ -4,7 +4,14 @@
 
 | 大规模无监督语义分割是计算机视觉领域的一个活跃研究领域，在自动驾驶、遥感、医学成像和视频监控等领域有许多潜在的应用，其涉及不使用有标签训练数据的情况下自动将图像内的相似区域或对象分组在一起。该任务的目标是生成一个语义分割图，将图像中的每个像素分配给特定的语义类别，例如“车辆”、“建筑”或“天空”等。
 
+| 方法设计思路：
+首先，我们参考官方训练代码和swav的训练代码。分别训练了resent18和resent50的baseline。
+其次，考虑到baseline的cluter生成聚类中心和伪标签环节需要设置背景阈值，因此我们根据最好的背景阈值，重新训练了resnet18和resnet50的main_pixel_attention。（即train_1.sh和train_2.sh）
+然后，考虑到baseline生成像素伪标签时，使用每个像素独立与聚类中心计算相似度，精确度不高的问题，我们使用SAM的grid mask，选取mask的内像素的平均特征统一与聚类中心计算相似度和阈值筛选。（即train_3.sh，这里就是为什么要用两个模型resnet18和resnet50的原因，受限于计算资源，我们的显卡跑不了resent50的sam推理，所以退一步使用resent18进行推理，所以需要训练两个模型。）
+最后，考虑到baseline的seg head比较简单，我们使用uppernet进行替换，设计了基于resnet50的分割网络。在最后提交结果方面，我们使用grid point mask对最终的分割结果进行精炼。（即train_4.sh）
+
 | 环境配置
+
 首先，安装jittor环境（两种选择）：
 1.通过conda安装环境
 conda env create -f requirement.yaml 
