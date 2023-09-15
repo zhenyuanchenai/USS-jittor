@@ -76,6 +76,8 @@ train_4.sh运行完毕后将生成B榜提交结果，保存在./weights/pass50_s
 ## | 开源协议
 我们遵守Apache License 2.0开源协议，具体请看LICENSE.txt文件
 
+
 ## | 致谢
+本项目基于[PASS](https://github.com/LUSSeg/PASS/tree/jittor)、[Jittor](https://github.com/Jittor/jittor)和[VAN](https://github.com/Visual-Attention-Network)感谢他们优秀的工作。
 
 
