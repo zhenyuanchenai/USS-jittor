@@ -73,6 +73,10 @@ train_4.sh中./weights/pass50_resnet50/checkpoint.pth.tar可替换为./weights/t
 train_4.sh运行完毕后将生成B榜提交结果，保存在./weights/pass50_sam_upper50/pixel_finetuning/testB中。
 ```
 
+## | 热身赛代码
+代码：CGAN.py
+结果：result.png
+
 ## | 开源协议
 我们遵守Apache License 2.0开源协议，具体请看LICENSE.txt文件
 
